@@ -124,12 +124,12 @@ footer { padding: 1rem 0 0; color: var(--steel); font-size: .75rem; }
 @media (max-width: 1023px) {
   .page-layout { margin: 0; }
   .stage-view > canvas { opacity: .35; mask-image: none; -webkit-mask-image: none; }
-  .stage-caption { right: 24px; bottom: 16px; width: min(340px, calc(100vw - 48px)); font-size: .7rem; }
+  /* Phones/tablets: the stage is only a faint backdrop, so its captions and labels would sit on top of the text. */
+  .stage-caption, .stage-labels { display: none; }
   .content { width: auto; max-width: 744px; margin: 0 auto; padding: 16px 32px 100px; }
   .content > section { padding: 48px 0 72px; scroll-margin-top: 24px; }
   .content > section:first-child { min-height: calc(100svh - 100px); }
   h1 { font-size: clamp(40px, 8vw, 72px); }
-  .stage-label { font-size: .7rem; max-width: 120px; }
 }
 @media (max-width: 599px) {
   .site-header { height: 68px; padding: 12px 24px; }
