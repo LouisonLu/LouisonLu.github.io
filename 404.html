@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <script>
+    (() => {
+      let theme = 'light';
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') theme = saved;
+      } catch {}
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="color-scheme"]').setAttribute('content', theme);
+    })();
+  </script>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#D9DCD6">
+  <title>Page not found — Louison Lu</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script type="module" src="/assets/main.js"></script>
+</head>
+<body class="error-page">
+  <header class="site-header">
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>
+      <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+      <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 15.5A9 9 0 0 1 8.5 4 9 9 0 1 0 20 15.5Z"/></svg>
+    </button>
+  </header>
+<main><a href="/">Louison Lu</a><p>404</p><h1>Page not found</h1><a href="/">Back to home</a></main></body>
+</html>

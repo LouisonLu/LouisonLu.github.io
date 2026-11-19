@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <script>
+    (() => {
+      let theme = 'light';
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'dark' || saved === 'light') theme = saved;
+      } catch {}
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="color-scheme"]').setAttribute('content', theme);
+    })();
+  </script>
+  <meta name="theme-color" content="#D9DCD6">
+  <title>Louison Lu — AI Researcher &amp; Engineer</title>
+  <meta name="description" content="Louison Lu researches 360° video world models and multi-humanoid collaboration at USC, backed by backend engineering experience.">
+  <link rel="canonical" href="https://louisonlu.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Louison Lu — AI Researcher &amp; Engineer">
+  <meta property="og:description" content="World models, embodied AI, ML engineering. Research on AI that sees and acts in the 3D world.">
+  <meta property="og:url" content="https://louisonlu.github.io/">
+  <meta property="og:image" content="https://louisonlu.github.io/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=20261119c">
+  <script type="module" src="assets/main.js?v=20261119"></script>
+</head>
+<body>
+  <header class="site-header">
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" hidden>
+      <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+      <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 15.5A9 9 0 0 1 8.5 4 9 9 0 1 0 20 15.5Z"/></svg>
+    </button>
+  </header>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-layout">
+    <div class="stage" aria-label="A living 3D stage">
+      <div class="stage-view"><div class="stage-labels" aria-hidden="true"></div></div>
+      <p class="stage-caption" aria-live="polite">A world model imagines the city around the robot. Dashed blocks are guesses; solid ones were seen.</p>
+    </div>
+    <main id="main" class="content">
+      <section id="intro" data-act="intro" aria-labelledby="name">
+        <div class="name-block"><h1 id="name">Louison Lu</h1><img src="assets/img/portrait.jpg" alt="Portrait of Louison Lu" width="96" height="120" fetchpriority="high"></div>
+        <p class="intro-lead">I build AI that sees and acts in the 3D world.</p>
+        <p>Research on 360° video world models and multi-humanoid collaboration — backed by backend engineering experience.</p>
+        <div class="word-links"><a href="https://github.com/LouisonLu" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/louisonlu/" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div class="email-row"><a data-u="louisonlu1999" data-d="gmail.com"></a><noscript>louisonlu1999 [at] gmail [dot] com</noscript><button class="copy-email" type="button" hidden>Copy</button><span class="copy-status sr-only" aria-live="polite"></span></div>
+        <div class="affiliations">
+          <p class="affiliations-label">Affiliations &amp; collaborators</p>
+          <div class="affiliation-logos">
+            <a href="https://www.usc.edu" target="_blank" rel="noopener"><img src="assets/logos/usc.svg" alt="USC" width="1024" height="182"><span>University of Southern California</span></a>
+            <a href="https://psi-lab.ai" target="_blank" rel="noopener"><img src="assets/logos/psi-lab.png" alt="PSI Lab" width="252" height="256"><span>Physical Superintelligence Lab</span></a>
+            <a href="https://www.bosch.com/research/" target="_blank" rel="noopener"><img src="assets/logos/bosch.svg" alt="Bosch Research" width="433" height="97"><span>Research collaboration</span></a>
+          </div>
+        </div>
+      </section>
+      <section id="pwp" data-act="pwp" aria-labelledby="pwp-title">
+        <p class="note research-context">Generative world models and embodied AI.</p>
+        <h2 id="pwp-title">PwP: Panoramas without Panoramas</h2>
+        <p class="subtitle">Camera-Controlled 360° Video from Any View via Perspective-Only Adaptation</p>
+        <p class="authors"><strong>Louison Lu*</strong>, Qi Pan*, Ting-Hsuan Chen*, Hengyuan Zhang, Xinyu Huang, Cho-Ying Wu, Yue Wang, Liu Ren <span>* Equal contribution</span></p>
+        <p class="note collaboration">In collaboration with Bosch Research</p>
+        <p class="publication">First author, under review</p>
+        <div class="word-links"><a href="https://anonymoususer020.github.io/PwP_page/" target="_blank" rel="noopener">Project page</a></div>
+        <p>PwP generates camera-controlled 360° videos from any initial view, from a single perspective image to a full panorama, without panoramic recordings in the target domain. It learns a panoramic prior from 360° videos and adapts it using perspective videos alone.</p>
+        <p class="highlight">From one car camera covering <strong>3.1%</strong> of the sphere, PwP returns the complete <strong>360° video</strong> — and outperforms 360° baselines (Argus, ViewPoint, Imagine360) even from a single view.</p>
+        <p class="stack">Video diffusion, Cosmos Transfer 2.5, 360° geometry, point-cloud camera control, multi-GPU training</p>
+        <video class="visible-video" id="pwp-teaser" controls muted loop playsinline preload="none" poster="assets/media/pwp.jpg" width="1280" height="720" aria-label="PwP teaser: seven car cameras in, a full 360° video out"><source src="assets/media/pwp.mp4" type="video/mp4"></video>
+        <button type="button" class="look-around" aria-expanded="false" aria-controls="pwp-pano" hidden>Look around</button>
+        <figure class="pano-figure" id="pwp-pano" aria-labelledby="pano-caption" hidden>
+          <figcaption id="pano-caption">Step inside a PwP video. Drag to look around.</figcaption>
+          <div class="pano-stage"><video id="pano-video" controls muted loop playsinline preload="none" poster="assets/media/pwp360.jpg" width="1024" height="512" aria-label="A full 360° street video generated by PwP from a car's cameras, shown as an equirectangular panorama"><source src="assets/media/pwp360.mp4" type="video/mp4"></video><button class="pano-play" type="button" hidden>Play</button></div>
+          <p class="pano-caption">A full 360° video generated by PwP from a car's cameras <span>360° × 180°</span></p>
+          <div class="pano-controls" hidden><div class="pano-modes" role="group" aria-label="360° projection"><button type="button" data-pano-mode="perspective" aria-pressed="true">Perspective</button><button type="button" data-pano-mode="planet" aria-pressed="false">Little planet</button></div><output class="pano-readout" aria-label="Viewing direction">yaw 0°, pitch 0°, fov 90°</output></div>
+        </figure>
+      </section>
+      <section id="heaveho" data-act="heaveho" aria-labelledby="heaveho-title">
+        <h2 id="heaveho-title">Heave-Ho: Decentralized Long-Horizon Multi-Humanoid Collaboration</h2>
+        <p class="authors">Ting-Hsuan Chen*, Siheng Zhao*, Han Jiang*, Qi Pan, <strong>Louison Lu</strong>, Jiaheng Luo, Henghui Bao, Yiyu Chen, Quan Nguyen, Yue Wang <span>* Equal contribution</span></p>
+        <p class="publication">arXiv 2026</p>
+        <div class="word-links"><a href="https://heaveho-humanoid.github.io/" target="_blank" rel="noopener">Project page</a><a href="https://arxiv.org/abs/2611.22275" target="_blank" rel="noopener">arXiv</a><a href="https://github.com/heaveho-humanoid/Heave-Ho" target="_blank" rel="noopener">Code</a></div>
+        <p>A decentralized framework for collaborative multi-humanoid loco-manipulation. A post-trained humanoid tracking model coordinates physically coupled robots from local observations alone, while a vision-language planner and spoken leader–follower commands synchronize the team with no network communication.</p>
+        <p>Trained with two robots, it runs teams of up to ten, across 12 benchmark tasks, with no network messages.</p>
+        <p class="highlight"><strong>My role:</strong> real-robot experiments — planning and running sim-to-real trials on Unitree G1 teams, diagnosing and replacing faulty hardware, and recording robot data.</p>
+        <p class="stack">Multi-agent RL, humanoid control, vision-language planning, sim-to-real, Unitree G1, EngineAI PM01</p>
+        <video class="visible-video" id="team-video" controls muted loop playsinline preload="none" poster="assets/media/heaveho.jpg" width="1280" height="720" aria-label="Two humanoid robots carrying a box through a narrow door together"><source src="assets/media/heaveho.mp4" type="video/mp4"></video>
+        <div class="clip-tabs" role="group" aria-label="Heave-Ho clips" hidden><button type="button" data-clip="heaveho" aria-pressed="true">2 G1, narrow door</button><button type="button" data-clip="hh_real4" aria-pressed="false">4 G1, table</button><button type="button" data-clip="hh_human" aria-pressed="false">3 G1 and a person</button><button type="button" data-clip="hh_sim10" aria-pressed="false">10 G1, simulation</button></div>
+        <button class="command-button" type="button" hidden>Speak a command</button>
+      </section>
+      <section id="engineering" data-act="explore" aria-labelledby="engineering-title">
+        <h2 id="engineering-title">Engineering</h2>
+        <article class="role-row"><div class="role-date"><p>Oct 2024 – Feb 2025</p><p>New Taipei City, Taiwan</p></div><div><h3>Software engineer</h3><p class="organization">eBio Technology</p><p>AI medical air mattress that adjusts air pressure from body-pressure sensing to prevent pressure injuries in bedridden patients.</p><ul><li>Refactored the Django REST Framework backend APIs, cutting API response time by 40%.</li><li>Added Redis caching and a <span>MySQL primary–replica architecture</span>, cutting database query response time by 70%.</li><li>Tuned the AWS EC2 deployment (Docker, Nginx, CDN) and MQTT (IoT) messaging between mattress devices and the backend, cutting server response time by 30%.</li><li>Automated GitLab CI workflows and wrote technical documentation; worked with front-end and hardware teams on end-to-end performance from device to app.</li></ul></div></article>
+        <article class="role-row"><div class="role-date"><p>Oct 2023 – Feb 2024</p></div><div><h3>Research assistant (project coordinator)</h3><p class="organization">Chung Hua University</p><p>Project for Taiwan's Ministry of Transportation and Communications: upgrading the round-island cycling route platform.</p><ul><li>Represented the project team as the client in meetings with the contracted web vendor: wrote feature requirements, reviewed deliverables, and signed off 10+ features and improvements.</li><li>Coordinated work across departments and the vendor, shortening delivery cycles from 4 weeks to 2.</li><li>Built a user-support SOP that cut response time to user inquiries from 2 weeks to 3 days.</li></ul></div></article>
+        <article class="role-row"><div class="role-date"><p>Oct 2020 – Jan 2021</p></div><div><h3>Research assistant</h3><p class="organization">Soochow University</p><p>NSTC project on shared decision-making with deep learning.</p><ul><li>Analyzed public sentiment toward COVID-19 policies in several thousand online posts with Python NLP (jieba word segmentation, lexicon-based sentiment scoring).</li></ul></div></article>
+        <article class="role-row"><div class="role-date"><p>Sep 2020 – Jun 2021</p></div><div><h3>Teaching assistant</h3><p class="organization">Soochow University</p><ul><li>Mentored 50+ students in Java programming and OOP; coursework scores improved 20% overall.</li></ul></div></article>
+      </section>
+      <section id="about" data-act="explore" aria-labelledby="about-title">
+        <h2 id="about-title">About</h2>
+        <img class="about-photo" src="assets/img/about.jpg" alt="Louison Lu" width="800" height="1000" loading="lazy" decoding="async">
+        <p>I started in information management and backend engineering, where I learned to make systems fast and dependable. At USC I moved into AI research: teaching video models to imagine full 360° worlds, and teaching teams of humanoid robots to work together. I like problems where the model has to meet the real world.</p>
+        <h3>Beyond code</h3><p>Led Soochow University's dance club for four years — directed 10+ shows with 100+ performers for audiences of 2,000+, and took the team to the national university finals. Performed with a professional crew of 100 dancers.</p>
+        <h3>Education</h3>
+        <dl class="education"><dt>University of Southern California</dt><dd><p class="date">2025 – present</p><p>M.S. Computer Science</p><p class="note">Coursework: Machine Learning, Robotics, Deep Learning, Applied NLP</p></dd><dt>Soochow University, Taipei</dt><dd><p class="date">2017 – 2021</p><p>B.B.A. Computer Science &amp; Information Management</p><p class="note">Academic Excellence Award (ranked #1)<br>Best Capstone Project Award (1st place)</p></dd></dl>
+        <h3>Skills</h3><dl class="skills"><dt>AI/ML</dt><dd>Video diffusion, robot learning, TensorFlow, OpenCV, Stable Diffusion, NLP</dd><dt>Engineering</dt><dd>Python, Java, Django / DRF, Flask, React, Three.js</dd><dt>Infra</dt><dd>AWS EC2, Docker, Nginx, Redis, MySQL, Linux, multi-GPU clusters</dd><dt>Mobile</dt><dd>SwiftUI, Flutter, Android</dd></dl>
+        <p class="languages">Mandarin (native), English (fluent)</p>
+        <div id="contact" class="contact"><h3>Let's build something that works in the real world.</h3><div class="email-row"><a data-u="louisonlu1999" data-d="gmail.com"></a><noscript>louisonlu1999 [at] gmail [dot] com</noscript><button class="copy-email" type="button" hidden>Copy</button><span class="copy-status sr-only" aria-live="polite"></span></div><div class="word-links"><a href="https://github.com/LouisonLu" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/louisonlu/" target="_blank" rel="noopener">LinkedIn</a></div></div>
+        <footer><p>© 2026 Louison Lu, Los Angeles, CA. <a href="assets/models/LICENSE-unitree_g1.txt">G1 model: MuJoCo Menagerie (BSD-3-Clause)</a> 360° panoramas: Poly Haven (CC0). Textures: ambientCG (CC0). 360° factory video: <a href="https://www.youtube.com/watch?v=CNmi1LcoWfI">Blick 360</a> (YouTube, via 360-1M). Logos are trademarks of their respective owners.</p></footer>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
