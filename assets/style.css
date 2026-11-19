@@ -56,13 +56,13 @@ h3 { font-size: 1.05rem; line-height: 1.35; font-weight: 700; }
 .word-links { display: flex; flex-wrap: wrap; gap: 1.2rem; margin: 1.4rem 0; }
 .affiliations { margin-top: 1.5rem; }
 .affiliations-label { color: var(--steel); font-size: .8rem; margin-bottom: 1rem; }
-.affiliation-logos { display: flex; flex-wrap: wrap; align-items: start; gap: 1.2rem 1.5rem; }
-.affiliation-logos a { display: flex; flex-direction: column; align-items: start; gap: .5rem; max-width: 100%; color: var(--steel); font-size: .7rem; text-decoration: none; }
-/* Every logo sits on an identical tile (same size in both themes, so nothing shifts when the
-   theme changes); original brand colours; the tile fill only changes colour in dark mode. */
-.affiliation-logos img { box-sizing: border-box; width: 136px; height: 52px; padding: 10px 14px; object-fit: contain;
-  border: 1px solid var(--line); border-radius: 8px; background: transparent; }
-:root[data-theme="dark"] .affiliation-logos img { background: #f4f2ee; border-color: #f4f2ee; }
+.affiliation-logos { display: grid; grid-template-columns: repeat(3, minmax(0, max-content)); gap: 1.2rem 2.8rem; }
+.affiliation-logos a { display: flex; align-items: center; gap: 1rem; color: var(--steel); font-size: .78rem; line-height: 1.35; text-decoration: none; }
+.affiliation-logos strong { display: block; color: var(--ink); font-size: .92rem; font-weight: 600; }
+.affiliation-logos a:hover strong { color: var(--signal-ink); }
+/* Square marks at one size in both themes; only the plate fill changes in dark mode. */
+.affiliation-logos img { flex: none; box-sizing: border-box; width: 76px; height: 76px; padding: 9px; object-fit: contain; border-radius: 14px; background: transparent; }
+:root[data-theme="dark"] .affiliation-logos img { background: #f4f2ee; }
 .collaboration { margin-top: .5rem; }
 .research-context { margin-bottom: 1rem; }
 .subtitle { font-size: 1.15rem; line-height: 1.4; }
@@ -136,7 +136,8 @@ footer { padding: 1rem 0 0; color: var(--steel); font-size: .75rem; }
   .content { padding: 8px 24px 100px; }
   .role-row { grid-template-columns: 1fr; gap: .35rem; }
   .name-block { gap: 16px; }
-  .affiliation-logos img { width: 116px; height: 46px; padding: 9px 12px; }
+  .affiliation-logos { grid-template-columns: 1fr; gap: .8rem; }
+  .affiliation-logos img { width: 68px; height: 68px; padding: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; }
